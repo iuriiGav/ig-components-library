@@ -4,7 +4,7 @@ const DROPDOWN_MENU_CONTAINER = document.querySelectorAll("[data-js-trigger='snt
 // navbarExpandTopToBottom
 
 
-export const addFunctionalityToIgNavbarsnttbCollapse = () => {
+export const addFunctionalityToIgNavbarSnttbc = () => {
   if (NAVBAR_TOGGLER.length > 0) {
     addOverflowYToExpandedNavbar();
   }

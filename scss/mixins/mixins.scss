@@ -1,0 +1,26 @@
+@mixin flex-cc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin flex-justify-center {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin absolute-center-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin button-pressed {
+    transform: translateY(2px);
+}
+
+@mixin outline-focus {
+    cursor: pointer;
+    transition-delay: 0;
+    box-shadow: inset 0px 0px 0px 1px var(--color-white);
+  }
