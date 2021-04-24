@@ -6,7 +6,41 @@
 
 2. `Make sure that you have scss base, colors, mixins folders in your project with the required files`
 
-### Components
+
+#### Components
+<details>
+
+ <summary>Overlays</summary>
+
+ 1.  Sliding From Two Sides
+
+ ```
+@import './path/to/file/../node_modules/ig-components-library/scss/components/overlays/overlay__sliding-from-two-sides/overlay__sliding-from-two-sides
+ ```
+
+ </details>
+
+<details>
+
+ <summary>Buttons</summary>
+
+<details>
+
+ <summary>Hamburger</summary>
+
+ 1.  General Hamburger Button
+
+ ```
+@import './path/to/file/../node_modules/ig-components-library/scss/components/buttons/btn-hamburger/btn-hamburger__general
+ ```
+
+ </details>
+
+ </details>
+
+
+
+### Templates
 
 #### Navbars
 <details>
@@ -69,10 +103,19 @@ import { addFunctionalityToIgNavbarSNTTB } from './path/to/file/../node_modules/
 ```
 
 addFunctionalityToIgNavbarSNTTB arguments: 
+
+
 navName - your chosen navbar name
+
+
 dropdownOnClickOnly - true or false, 
                       if chosen true, dropdown opens only
                       on click, not hover
+
+
 breakpoint - specify the main breakpoint of the navbar (corresponding to  $navbar-breakpoint-main variable in base.scss)
 
 </details>
+
+
+

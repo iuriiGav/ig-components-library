@@ -1,6 +1,6 @@
 {
   "name": "ig-components-library",
-  "version": "0.0.8",
+  "version": "0.0.11",
   "description": "web components for faster web development",
   "main": "index.js",
   "scripts": {
