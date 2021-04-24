@@ -1,0 +1,19 @@
+{
+  "name": "ig-components-library",
+  "version": "0.0.0",
+  "description": "web components for faster web development",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iuriiGav/ig-components-library.git"
+  },
+  "author": "iuriiGav",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iuriiGav/ig-components-library/issues"
+  },
+  "homepage": "https://github.com/iuriiGav/ig-components-library#readme"
+}
