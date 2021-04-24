@@ -1,0 +1,237 @@
+// import mixins if they exist,
+// otherwise add these:
+// @mixin flex-cc {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
+
+// @mixin absolute-center-center {
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+// }
+
+
+
+@import "../../../../../mixins/mixins";
+
+$text-color: var(--color-white);
+$background-color: var(--color-dark);
+$nav-height: 100px;
+$logo-font-size: 1.6rem;
+$logo-font-weight: 900;
+$logo-font-family: var(--font-secondary);
+
+// optional text logo with tagline
+.ig-snttb-nav-logo {
+  &__text {
+    position: absolute;
+    padding: 0.2em;
+    top: 26px;
+    left: 40px;
+    color: var(--color-white);
+    z-index: 6;
+    font-size: $logo-font-size;
+    font-weight: $logo-font-weight;
+    font-family: $logo-font-family;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+&:hover {
+  @include outline-focus;
+
+}
+
+    @media only screen and (max-width: $bp-lg) {
+      font-weight: 700;
+      top: 38px;
+    }
+  }
+
+  &__tagline {
+    text-transform: none;
+    color: var(--color-white);
+    opacity: 0.5;
+    font-weight: 300;
+    font-size: 12px;
+  }
+}
+
+// toggle button
+.ig-snttb-navbar-toggler {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  height: 20px;
+  width: 25px;
+  z-index: 5;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:focus {
+    opacity: 0.8;
+  }
+  &__trigger {
+    display: none;
+    & + label {
+      span {
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        top: 50%;
+        margin-top: -1px;
+        left: 0;
+        display: block;
+        background: var(--color-white);
+        transition: 0.5s;
+      }
+      span:first-child {
+        top: 3px;
+      }
+      span:last-child {
+        top: 16px;
+      }
+    }
+    &:checked + label {
+      span {
+        opacity: 0;
+        top: 50%;
+      }
+      span:first-child {
+        opacity: 1;
+        transform: rotate(405deg);
+      }
+      span:last-child {
+        opacity: 1;
+        transform: rotate(-405deg);
+      }
+    }
+    // pressed button opening the full screen nav
+    &:checked ~ nav {
+      min-height: 100vh;
+      transition-delay: 0s;
+      @include flex-justify-center;
+      > ul {
+        visibility: visible;
+        > li {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.ig-snttb-nav__container {
+  background: var(--color-dark);
+  width: 100%;
+  height: $nav-height;
+  min-height: $nav-height;
+  z-index: 3;
+  transition: 0.5s;
+  transition-delay: 0.5s;
+  overflow: hidden;
+
+  & .ig-snttb-nav__list {
+    text-align: center;
+    visibility: hidden;
+    margin-top: calc(#{$nav-height} + 20px);
+    // @include absolute-center-center;
+  }
+
+  & .ig-snttb-nav__list-item {
+    opacity: 0;
+    transition: 0.5s;
+    transition-delay: 0s;
+    position: relative;
+    box-sizing: border-box;
+    font-size: 1.6rem;
+    padding: 0 1.5em;
+
+
+  
+  }
+  & .ig-snttb-nav__link {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--color-white);
+    font-weight: 700;
+    font-family: var(--font-secondary);
+    display: inline-block;
+    padding: 30px;
+    width: 100%;
+    transition: all 0.2s ease;
+
+    &:hover,
+    &:focus {
+      @include outline-focus;
+    }
+  }
+}
+
+.ig-main-navbar li {
+  transition: 0.5s;
+  transition-delay: 0s;
+}
+
+.ig-snttb-dropdown-menu__list {
+  position: absolute;
+  left: 100%;
+  top: 5px;
+  width: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.2s ease;
+  @media only screen and (max-width: $bp-md) {
+    transition: all 0.4s ease;
+  }
+  @media only screen and (max-width: $bp-md) {
+    left: 0;
+    top: inherit;
+    background-color: lighten(#040710, 3%);
+    z-index: 100;
+  }
+
+  & .ig-snttb-nav__list-item {
+    opacity: 1;
+    transition: 0.5s;
+    transition-delay: 0s;
+    font-size: 1.4rem;
+  }
+  & .ig-snttb-dropdown-menu__link {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--color-white);
+    font-weight: 400;
+    display: inline-block;
+    padding: 30px;
+    width: 100%;
+  transition: all 0.2s ease;
+
+
+    &:hover,
+    &:focus {
+      @include outline-focus;
+    }
+  
+
+  }
+}
+
+.ig-snttb-dropdown-menu__container:hover > ul,
+.ig-snttb-dropdown-menu__container:focus-within > ul,
+.ig-snttb-dropdown-menu__container ul:hover {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+
+.ig-snttb-nav__link:focus, .ig-snttb-dropdown-menu__link:focus  {
+  opacity: 0.8;
+}
+
+.ig-snttb-dropdown-menu__container:focus-within {
+  opacity: 0.8;
+}
