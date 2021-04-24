@@ -1,6 +1,6 @@
 <?php 
 
-class snttbc_walker extends Walker_Nav_menu
+class navbar_expand_top_to_bottom_walker_collapse extends Walker_Nav_menu
 {
   private $current_item;
   private $dropdown_menu_alignment_values = [
@@ -42,7 +42,7 @@ class snttbc_walker extends Walker_Nav_menu
 
     $classes = empty($item->classes) ? array() : (array) $item->classes;
 
-    $classes[] = ($args->walker->has_children) ? 'ig-snttbc-dropdown-menu__container' : '';
+    $classes[] = ($args->walker->has_children) ? 'ig-snttbc-dropdown-menu__container ig-snttb-dropdown-menu__list-item' : '';
     $classes[] = 'ig-snttbc-nav__list-item';
     $classes[] = 'ig-snttbc-nav__list-item-' . $item->ID;
     $attributes[] = 'data-tt="sd"';

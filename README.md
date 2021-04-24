@@ -9,8 +9,10 @@
 ### Components
 
 #### Navbars
+<details>
 
-##### Simple Navbar Sliding From Top To Bottom. _Outline on hover_
+ <summary>Simple Navbar Sliding From Top To Bottom. Outline on hover </summary>
+
 
 **Impport appropriate SCSS file:**
 ```
@@ -18,6 +20,11 @@
 @import './path/to/file/../node_modules/ig-components-library/scss/navbars/nav-v1-snttb/snttbc'
 ```
 
+**Copy and paste your customization file:**
+
+```
+@import './modifiers/snttb-custom';
+```
 
 **Copy php template file to your template-parts:**
 
@@ -38,8 +45,8 @@
 
 
 ```
-    require_once get_template_directory() . '/inc/walkers/nav-v1-snttb/snttb-walker.php';
-    require_once get_template_directory() . '/inc/walkers/nav-v1-snttb/snttbc-walker.php';
+require_once get_template_directory() . '/inc/walkers/nav-v1-snttb/snttb-walker.php';
+require_once get_template_directory() . '/inc/walkers/nav-v1-snttb/snttbc-walker.php';
 ```
 
 **Import JS files:**
@@ -49,3 +56,5 @@
 import {addFunctionalityToIgNavbarSnttb} from './path/to/file/../node_modules/ig-components-library/js/navbars/nav-v1-snttb/snttb'
 import {addFunctionalityToIgNavbarSnttbc} from './path/to/file/../node_modules/ig-components-library/js/navbars/nav-v1-snttb/snttbc'
 ```
+
+</details>
